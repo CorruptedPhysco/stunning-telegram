@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from main import scrape_target_link
+from main import scrape_specific_link
 
 app = Flask(__name__)
 
