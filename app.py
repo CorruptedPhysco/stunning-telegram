@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/scrape', methods=['GET'])
 def scrape():
     try:
-        link = scrape_target_link()
+        link = scrape_specific_link()
         return jsonify({"status": "success", "link": link})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)})
