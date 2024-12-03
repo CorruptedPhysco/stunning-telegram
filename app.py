@@ -8,8 +8,16 @@ def scrape_target_link():
     # Target URL to scrape
     url = "https://bingotingo.com/best-social-media-platforms/"
     
+    # Add headers to mimic a browser
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive"
+    }
+
     # Fetch the page content
-    response = requests.get(url)
+    response = requests.get(url, headers=headers)
     if response.status_code != 200:
         return None, f"Failed to fetch the page. Status code: {response.status_code}"
 
